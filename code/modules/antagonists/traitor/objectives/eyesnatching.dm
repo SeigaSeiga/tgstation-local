@@ -50,8 +50,12 @@
 	heads_of_staff = TRUE
 
 /datum/traitor_objective/eyesnatching/generate_objective(datum/mind/generating_for, list/possible_duplicates)
-	if(HAS_TRAIT(generating_for.current, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
-		return FALSE
+
+	var/list/already_targeting = list() //List of minds we're already targeting. The possible_duplicates is a list of objectives, so let's not mix things
+	for(var/datum/objective/task as anything in handler.primary_objectives)
+		if(!istype(task.target, /datum/mind))
+			continue
+		already_targeting += task.target //Removing primary objective kill targets from the list
 
 	var/list/possible_targets = list()
 	var/try_target_late_joiners = FALSE
@@ -60,6 +64,9 @@
 
 	for(var/datum/mind/possible_target as anything in get_crewmember_minds())
 		if(possible_target == generating_for)
+			continue
+
+		if(possible_target in already_targeting)
 			continue
 
 		if(!ishuman(possible_target.current))
@@ -72,9 +79,6 @@
 			continue
 
 		if(!possible_target.assigned_role)
-			continue
-
-		if(HAS_TRAIT(possible_target, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
 			continue
 
 		if(heads_of_staff)
@@ -167,10 +171,6 @@
 	var/obj/item/bodypart/head/head = victim.get_bodypart(BODY_ZONE_HEAD)
 
 	if(!head || !eyeballies || victim.is_eyes_covered())
-		return ..()
-
-	if(HAS_TRAIT(victim, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
-		to_chat(user, span_warning("You get the feeling that you shouldn't use [src] on [victim]."))
 		return ..()
 
 	user.do_attack_animation(victim, used_item = src)
