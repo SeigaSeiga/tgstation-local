@@ -68,7 +68,19 @@
 		list("Swiftcast! Hastega! Abjurer's Ward II! Extend IV! Tenser's Advanced Enhancement! Protection from Good! Enhance Effect III! Arcane Re...",
 			"...inforcement IV! Turn Vermin X! Protection from Evil II! Mage's Shield! Venerious's Mediocre Enhancement II! Expand Power! Banish Hu...",
 			"...nger II! Protection from Neutral! Surecastaga! Refresh! Refresh II! Sharpcast X! Aetherial Manipulation! Ley Line Absorption! Invoke Grand Ritual!!"),
-		list("git checkout origin master", "git reset --hard HEAD~2", "git push origin master --force!!",)
+		list("git checkout origin master", "git reset --hard HEAD~2", "git push origin master --force!!"),
+		list("T'yu! T'mei!", "T'yu! T'mei! T'yu! T'mei!", "O'dere! O'dere O'dere!!"),
+		list("Two, Four, Six, Eight...", "Red, Green, Brown, Blue...", "Roles to play, far away!!"),
+		list("Snap! Click! Clank! Whirr! Whizz! Wham! Boom!", "Crack! Thoom! Snap! Bam! Bim! Bang! Zoom!", "Doom Gobbieboom! Boom Gobbiedoom!! "),
+		list("Eenie, meenie... ", "Miney... ", "Mo!!"),
+		list("Levios!", "Graviole!", "Explomb!!"),
+		list("Cuh'men Cee Im!", "Cuh'men Mee Im!", "E'shur Bes Fren!"),
+		list("He he!", "Ha ha!", "BOBO!!"),
+		list("Ora!", "Dora!", "Mudah!!"),
+		list("...", "...... heh.", "*snap"),
+		list("Ultimate School of Magic!", "Ultimate Ritual!", "Macrocosm!!"),
+		list("Planetary Revolution!", "Ten Evil Stars!", "Hell and Heaven Meltdown!!"),
+		list("Nake...", "Snake...", "Cobura, Cobura!"),
 	)
 
 // Prepare magic words and hide from silicons
